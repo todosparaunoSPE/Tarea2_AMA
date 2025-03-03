@@ -39,6 +39,23 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 # Título de la aplicación
 st.title("Regresión Lineal con Regularización")
 
+# Sidebar
+with st.sidebar:
+    st.header("Ayuda")
+    st.write("""
+    Esta aplicación permite realizar análisis de regresión lineal con regularización (Ridge y Lasso) sobre un conjunto de datos. 
+    - **Carga de datos**: Se carga el archivo `meatspec.csv` y se muestran todos los registros.
+    - **Distribución de la variable objetivo**: Se muestra un histograma de la variable `fat`.
+    - **Modelos**: Se entrenan y evalúan modelos de regresión lineal (OLS, Ridge y Lasso) con diferentes valores de regularización.
+    - **Resultados**: Se muestran los errores (RMSE) y los coeficientes de cada modelo.
+    - **Comparación**: Se comparan los modelos en términos de RMSE.
+    - **PDF**: Se genera un PDF con las respuestas a los incisos planteados.
+    """)
+    
+    st.markdown("---")
+    st.write("Desarrollado por: Javier Horacio Pérez Ricárdez")
+    st.write("© 2023 Copyright")
+
 # Cargar el archivo CSV
 @st.cache_data
 def load_data():
